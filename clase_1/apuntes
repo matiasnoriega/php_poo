@@ -7,11 +7,11 @@ Ford Ka -> Instancia de la clase
 
 Nclase
 ------
-+ Atributo
++ Atributo (caracteristicas)
 + Atributo
 + Atributo
 -------
-metodo()
+metodo() (Acciones)
 metodo()
 metodo()
 
@@ -25,3 +25,57 @@ precio
 agregar()
 modificar()
 eliminar()
+
+--------------
+
+MVC
+Model -> Se modela en relacion a la base de datos
+View 
+Controller
+
+--------------------
+
+CRUD -> Create Read Update Delete
+
+Las clases se arman en relacion a esto, que es lo bàsico.
+--------------------
+
+Public: Se puede acceder desde afuera de la clase.
+Private: No se puede acceder desde fuera de la clase.
+
+
+ECHO es una construccion, no una funcion, pero se puede usar separando lo que se quiere imprimir con ',' en lugar de concatenar con puntos, lo toma igual. Lo que hace con los puntos es concatenar E imprimir.
+
+Para crear una clase nueva se crea un archivo dedicado que se llama igual, ex: Persona.php (Mayuscula y singular).
+
+'class Persona(){' --> El inicio de la declaraciòn de la clase persona.
+
+Para que un atributo sea tal y no una variable, hay que declararlo con la visibilidad (public, protected, private, etc.).
+
+'new' -> palabra reservada para instanciar objetos. 
+
+--------------------
+
+Noticia
+------
+categoria
+titulo
+fecha
+foto
+texto
+------
+agregarNoticia()
+editarNoticia()
+eliminarNoticia()
+listarNoticias()
+verNoticiaPorID()
+
+--------------------
+
+Persona
+------
+nombre
+apellido
+------
+verDatos()
+
