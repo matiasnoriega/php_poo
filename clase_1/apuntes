@@ -1,0 +1,27 @@
+- Parametrizar lo que voy a programar --> Clase ** El nombre de una clase en mayuscula el primer caracter y en singular.
+
+AUTO -> Clase
+
+Ford Ka -> Instancia de la clase
+
+
+Nclase
+------
++ Atributo
++ Atributo
++ Atributo
+-------
+metodo()
+metodo()
+metodo()
+
+
+Auto
+------
+marca
+modelo
+precio
+------
+agregar()
+modificar()
+eliminar()
