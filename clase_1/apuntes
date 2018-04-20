@@ -25,6 +25,21 @@ precio
 agregar()
 modificar()
 eliminar()
+--------------------
+
+Noticia
+------
+-categoria
+-titulo
+-fecha
+-foto
+-texto
+------
++agregarNoticia()
++editarNoticia()
++eliminarNoticia()
++listarNoticias()
++verNoticiaPorID()
 
 --------------
 
@@ -52,30 +67,32 @@ Para crear una clase nueva se crea un archivo dedicado que se llama igual, ex: P
 
 Para que un atributo sea tal y no una variable, hay que declararlo con la visibilidad (public, protected, private, etc.).
 
+'->' OBJECT OPERATOR
+
+Los getters y setters no van a ir en la gràfica.
+
 'new' -> palabra reservada para instanciar objetos. 
 
---------------------
+PLUGIN --> PHP Getters and Setters
 
-Noticia
-------
-categoria
-titulo
-fecha
-foto
-texto
-------
-agregarNoticia()
-editarNoticia()
-eliminarNoticia()
-listarNoticias()
-verNoticiaPorID()
+Buena practica: Nunca acceder directamente al atributo, usar los getters y los setters declarados.
+
+
+1º- Instanciar
+2º- Llamar Metodos
+
 
 --------------------
 
 Persona
 ------
-nombre
-apellido
+-nombre
+-apellido
 ------
-verDatos()
++verDatos()
 
+----------------------------------------------------------------------------------------------------
+
+INVESTIGAR QUE ES UN CONSTRUCTOR Y UN DESTRUCTOR EN PHP
+
+- MYSQLI_CONNECT/FETCH_ASSOC/QUERY/etc.
