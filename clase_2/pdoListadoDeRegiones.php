@@ -6,7 +6,9 @@
 	$link = new PDO(
 					 'mysql:host=localhost;dbname=agencia',
 					 'root',
-					 '');
+					 '', 
+					 $opciones);
+	
 	$sql = "SELECT regID, regNombre FROM regiones";
 
 	$stmt = $link->prepare($sql);
