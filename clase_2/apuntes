@@ -1,0 +1,8 @@
+PHP Database Object (PDO)
+
+Es una clase propia de PHP, QUE SIRVE PARA TRABAJAR CON CUALQUIER MOTOR DE BASE DE DATOS
+
+PDO -> Gestiona la conexiòn
+PDOStatement -> Gestiona los datos (Todo lo que tiene que preparar, proteger, manejo y envio del SQL);
+
+DSN -> Data Source Name || 3 datos: EL SERVER (msqli), EL NOMBRE DEL SERVER y EL NOMBRE DE LA DB
