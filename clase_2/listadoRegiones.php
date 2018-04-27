@@ -1,5 +1,12 @@
 <?php 
-include('header.php');
+require('header.php');
+require('conexion.php');
+$sql = "SELECT regID, regNombre FROM regiones";
+
+$stmt = $link->prepare($sql);
+$stmt->execute();
+
+$resultados = $stmt->fetchAll();
 ?>
 
 <section class="container">
@@ -15,31 +22,22 @@ include('header.php');
 		<tbody>
 			<?php
 
-			$opciones  = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-			$link = new PDO(
-				'mysql:host=localhost;dbname=agencia',
-				'root',
-				'', 
-				$opciones);
-			$sql = "SELECT regID, regNombre FROM regiones";
-
-			$stmt = $link->prepare($sql);
-			$stmt->execute();
-
-			$resultados = $stmt->fetchAll();
-
 			foreach ($resultados as $resultado) {
 				
-				echo '<tr><td>', $resultado['regID'], '</td><td>', $resultado['regNombre'], '</td></tr>';
+				?>
+				<tr>
+					<td><?php echo $resultado['regID'] ?></td>
+					<td><?php echo $resultado['regNombre'] ?></td>
+				</tr>
+
+				<?php
 			}
-
-
 			?>
-			</tbody>
+		</tbody>
 
-		</table>
-	</section>
+	</table>
+</section>
 
-	<?php 
-	include('footer.php');
-	?>
+<?php 
+include('footer.php');
+?>

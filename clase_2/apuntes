@@ -6,3 +6,21 @@ PDO -> Gestiona la conexiòn (Fase conexion)
 PDOStatement -> Gestiona los datos (Todo lo que tiene que preparar, proteger, manejo y envio del SQL) Fase de Datos
 
 DSN -> Data Source Name || 3 datos: EL SERVER (msqli), EL NOMBRE DEL SERVER y EL NOMBRE DE LA DB
+
+MVC
+MySQL (DB)<--> Model <---> Controller <---> View <---> USUARIO
+
+Una clase por cada tabla
+
+--------------------
+Region
+--------------------
+-regID
+-regNombre
+--------------------
++listerRegiones()
++verRegionPorID()
++agregarRegion()
++modificarRegion()
++eliminarRegion()
+--------------------
