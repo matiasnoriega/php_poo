@@ -1,0 +1,42 @@
+Hay un Modelo (clase) por cada tabla, cada atributo 
+
+Singleton es una clase que puede haber solo una instanciada.
+
+:: -----> Los 2 puntos son para poder llamar a un metodo estatico, de una clase, sin instanciar un objeto.
+--------------------
+Region
+--------------------
+-regID
+-regNombre
+--------------------
++listerRegiones()
++verRegionPorID()
++agregarRegion()
++modificarRegion()
++eliminarRegion()
+--------------------
+
+
+--------------------
+Destino
+--------------------
+-destID
+-destNombre
+-regID
+-destPrecio
+-destAsientos
+-destDisponibles
+-destActivo
+-------------------
++listarDestinos()
++verDestinoPorID()
++agregarDestino()
++modificarDestino()
++eliminarDestino()
+-------------------
+
+
+-------------------
+Conexion
+-------------------
++conectar()
