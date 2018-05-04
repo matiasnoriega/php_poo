@@ -1,4 +1,4 @@
-Hay un Modelo (clase) por cada tabla, cada atributo 
+Hay un Modelo (clase) por cada tabla, cada atributo corresponde a un campo.
 
 Singleton es una clase que puede haber solo una instanciada.
 
