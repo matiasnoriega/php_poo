@@ -1,11 +1,5 @@
 <?php
-    include('templates/header.php');
-    require('clases/Destino.php');
-    require('clases/Conexion.php');
-
-    $objDestino = new Destino();
-    $listado = $objDestino->listarDestinos();
-
+    include 'templates/header.php';
 ?>
 
     <section class="container">
@@ -30,28 +24,26 @@
             </thead>
 
             <tbody>
-            <?php foreach($listado as $destino){?>
             <tr>
-                <th scope="row"><?php echo $destino['destID'] ?></th>
-                <td><?php echo $destino['destNombre'] ?></td>
-                <td><?php echo $destino['regNombre'] ?></td>
-                <td><?php echo $destino['destPrecio'] ?></td>
-                <td><?php echo $destino['destAsientos'] ?></td>
-                <td><?php echo $destino['destDisponibles'] ?></td>
+                <th scope="row">1</th>
+                <td>nombre</td>
+                <td>region</td>
+                <td>precio</td>
+                <td>asientos</td>
+                <td>disponibles</td>
                 <td>
-                    <a class="btn btn-warning" href="formEditarDestino.php?destID=<?php echo $destino['destID'] ?>">
+                    <a class="btn btn-warning" href="formEditarDestino.php?destID=1">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                     modificar
                     </a>
                 </td>
                 <td>
-                    <a class="btn btn-danger" href="formEliminarDestino.php?regID=<?php echo $destino['destID'] ?>">
+                    <a class="btn btn-danger" href="formEliminarDestino.php?regID=1">
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     eliminar
                     </a>
                 </td>
             </tr>
-            <?php } ?>
             </tbody>
         </table>
 
