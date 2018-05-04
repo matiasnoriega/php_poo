@@ -27,6 +27,17 @@ class Region{
 
 	}
 
+	public function verRegionPorID($id){
+
+		$link = Conexion::conectar();
+		$sql = "SELECT regID, regNombre FROM regiones WHERE regID = " . $id;
+		$stmt = $link->prepare($sql);
+		$stmt->execute();
+		$region = $stmt->fetch(PDO::FETCH_ASSOC);
+
+		return $region;
+	}
+
 	//Getters & Setters
     public function getRegID()
     {

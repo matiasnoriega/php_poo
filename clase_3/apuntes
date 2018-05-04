@@ -3,6 +3,9 @@ Hay un Modelo (clase) por cada tabla, cada atributo
 Singleton es una clase que puede haber solo una instanciada.
 
 :: -----> Los 2 puntos son para poder llamar a un metodo estatico, de una clase, sin instanciar un objeto.
+
+¿Que tengo que hacer? ---> ¿Què necesito? ---> ¿Como lo obtengo?
+
 --------------------
 Region
 --------------------
