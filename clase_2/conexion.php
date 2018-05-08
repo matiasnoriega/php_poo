@@ -6,4 +6,4 @@ $link = new PDO(
 	'root',
 	'', 
 	$opciones);
-$link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+$link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING); //para quemarque todos los errores
