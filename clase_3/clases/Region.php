@@ -38,6 +38,17 @@ class Region{
 		return $region;
 	}
 
+	public function modificarRegion($id){
+
+		$nombre = $_POST['regNombre'];
+		$link = Conexion::conectar();
+		$sql = "UPDATE regiones SET regNombre = '" . $nombre . "' WHERE regID = " . $id;
+
+		$stmt = $link->prepare($sql);
+
+		return $stmt->execute();
+	}
+
 	//Getters & Setters
     public function getRegID()
     {

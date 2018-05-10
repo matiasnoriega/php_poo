@@ -25,7 +25,7 @@
         <h1>Formulario de modificaci&oacute;n de una regi&oacute;n</h1>
 
         <div class="well">
-            <form action="modificarRegion.php" method="post">
+            <form action="" method="post">
                 <div class="form-group form-group-lg">
                     <input type="text" name="regNombre" class="form-control" placeholder="" value="<?php echo $region['regNombre'] ?>" required>
                     <input type="hidden" name="regID" value="<?php echo $region['regID'] ?>">
