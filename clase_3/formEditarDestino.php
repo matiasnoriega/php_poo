@@ -34,7 +34,7 @@ $listadoRegiones = $objRegion->listarRegiones();
 
             <div class="form-group form-group-lg">
                 <label for="regID">Regi&oacute;n</label>
-                <select class="form-control" name="regID" id="regID">
+                <select class="form-control" name="regID" id="regID" required>
                     <option value="" disabled selected>Elegir una Regi&oacute;n</option>
                     <?php
                     foreach($listadoRegiones as $region){
