@@ -54,7 +54,7 @@ class Destino{
         $disponibles = $_POST['destDisponibles'];
 
         $link = Conexion::conectar();
-        $sql = "UPDATE destinos SET destNombre =" . $nombre . ", regID =" . $region . ", destPrecio =" . $precio . ", destAsientos =". $asientos . ", destDisponibles =" . $disponibles . " WHERE destID =" . $id;
+        $sql = "UPDATE destinos SET destNombre = '" . $nombre . "', regID = " . $region . ", destPrecio = " . $precio . ", destAsientos = ". $asientos . ", destDisponibles = " . $disponibles . " WHERE destID = " . $id;
 
         $stmt = $link->prepare($sql);
         
