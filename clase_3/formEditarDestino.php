@@ -32,9 +32,9 @@ $listadoRegiones = $objRegion->listarRegiones();
                 <input type="hidden" name="destID" value="<?php echo $destino['destID'] ?>">
             </div>
 
-            <div class="form-group">
+            <div class="form-group form-group-lg">
                 <label for="regID">Regi&oacute;n</label>
-                <select class="form-control form-control-lg" name="regID" id="regID">
+                <select class="form-control" name="regID" id="regID">
                     <option value="" disabled selected>Elegir una Regi&oacute;n</option>
                     <?php
                     foreach($listadoRegiones as $region){
