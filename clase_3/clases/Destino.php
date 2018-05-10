@@ -45,6 +45,23 @@ class Destino{
 		return $destino;
 	}
 
+    public function modificarDestino($id){
+
+        $nombre = $_POST['destNombre'];
+        $region = $_POST['regID'];
+        $precio = $_POST['destPrecio'];
+        $asientos = $_POST['destAsientos'];
+        $disponibles = $_POST['destDisponibles'];
+
+        $link = Conexion::conectar();
+        $sql = "UPDATE destinos SET destNombre =" . $nombre . ", regID =" . $region . ", destPrecio =" . $precio . ", destAsientos =". $asientos . ", destDisponibles =" . $disponibles . " WHERE destID =" . $id;
+
+        $stmt = $link->prepare($sql);
+        
+        return $stmt->execute();
+
+    }
+
     /**
      * @return mixed
      */
