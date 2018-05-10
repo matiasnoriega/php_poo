@@ -45,6 +45,22 @@ class Destino{
 		return $destino;
 	}
 
+    public function agregarDestino(){
+
+        $nombre = $_POST['destNombre'];
+        $region = $_POST['regID'];
+        $precio = $_POST['destPrecio'];
+        $asientos = $_POST['destAsientos'];
+        $disponibles = $_POST['destDisponibles'];
+        $link = Conexion::conectar();
+
+        $sql = "INSERT INTO destinos (destNombre, regID, destPrecio, destAsientos, destDisponibles) VALUES ('" . $nombre . "', " . $region . ", " . $precio . ", " . $asientos . ", " . $disponibles .")";
+
+        $stmt = $link->prepare($sql);
+        
+        return $stmt->execute();
+    }
+
     public function modificarDestino($id){
 
         $nombre = $_POST['destNombre'];

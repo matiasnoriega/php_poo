@@ -12,6 +12,7 @@ $listadoRegiones = $objRegion->listarRegiones();
 <section class="container">
     <?php
     if(isset($_POST['submit'])){
+
         $objDestino = new Destino();
         $resultado = $objDestino->agregarDestino();
         ?>
@@ -51,7 +52,7 @@ $listadoRegiones = $objRegion->listarRegiones();
                     <input type="number" name="destDisponibles" class="form-control" placeholder="Disponibles" required>
                 </div>
                 <div class="form-group form-group-lg">
-                    <input type="submit" value="Agregar Región" class="btn btn-success">
+                    <input type="submit" name="submit" value="Agregar Región" class="btn btn-success">
                     <a href="adminDestinos.php" class="btn btn-default">Volver al Listado de Destinos</a>
                 </div>
             </form>
