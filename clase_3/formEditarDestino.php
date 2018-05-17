@@ -35,15 +35,12 @@ $listadoRegiones = $objRegion->listarRegiones();
             <div class="form-group form-group-lg">
                 <label for="regID">Regi&oacute;n</label>
                 <select class="form-control" name="regID" id="regID" required>
-                    <option value="<?php  $destino['regID'] ?>"><?php echo $destino['regNombre'] ?></option>
                     <?php
                     foreach($listadoRegiones as $region){
-                      if($region['regID'] != $destino['regID']){
                         ?>
-                      
-                        <option value="<?php echo $region['regID'] ?>"><?php echo $region['regNombre'] ?></option>
+                        <option value="<?php echo $region['regID'] ?>" <?= ($region['regID'] == $destino['regID']) ? "selected" : '' ?>><?php echo $region['regNombre'] ?></option>
 
-                        <?php }} ?>
+                        <?php } ?>
                     </select>
                 </div>
                 <div class="form-group form-group-lg">
