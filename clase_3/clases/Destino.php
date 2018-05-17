@@ -35,7 +35,7 @@ class Destino{
 	public function verDestinoPorID($id){
 
 		$link = Conexion::conectar();
-		$sql = "SELECT destID, destNombre, regNombre, destPrecio, destAsientos, destDisponibles, destActivo FROM destinos, regiones WHERE destinos.regID = regiones.regID AND destID = " . $id;
+		$sql = "SELECT destID, destNombre, regNombre, destPrecio, destAsientos, destDisponibles, destActivo, regiones.regID FROM destinos, regiones WHERE destinos.regID = regiones.regID AND destID = " . $id;
 
 		$stmt = $link->prepare($sql);
 		$stmt->execute();

@@ -18,13 +18,13 @@ $listadoRegiones = $objRegion->listarRegiones();
         ?>
         <div class="alert alert-<?= ($resultado) ? 'success' : 'danger'?>" role="alert">
           <?= ($resultado) ? 'Agregado con &Eacute;xito' : 'Hubo un Error'?>
-        </div>
-        <a href="adminDestinos.php" class="btn btn-default">Volver al Listado de Destinos</a>
+      </div>
+      <a href="adminDestinos.php" class="btn btn-default">Volver al Listado de Destinos</a>
 
-    <?php } ?>
-    <h1>Formulario de alta de una nueva Destino</h1>
+      <?php } ?>
+      <h1>Formulario de alta de una nueva Destino</h1>
 
-    <div class="well">
+      <div class="well">
         <form action="" method="post">
             <div class="form-group form-group-lg">
                 <input type="text" name="destNombre" class="form-control" placeholder="Nombre del Destino" required>
@@ -43,23 +43,32 @@ $listadoRegiones = $objRegion->listarRegiones();
                     </select>
                 </div>
                 <div class="form-group form-group-lg">
-                    <input type="number" name="destPrecio" class="form-control" placeholder="Precio" required>
+                    <div class="input-group input-group-lg">
+                      <span class="input-group-addon">$</span>
+                      <input type="number" name="destPrecio" class="form-control" placeholder="Ingresar Precio" required>
+                  </div>
+              </div>
+              <div class="form-group form-group-lg">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">#</span>
+                    <input type="number" name="destAsientos" class="form-control" placeholder="Ingresar Cantidad de Asientos Totales" required>
                 </div>
-                <div class="form-group form-group-lg">
-                    <input type="number" name="destAsientos" class="form-control" placeholder="Asientos" required>
+            </div>
+            <div class="form-group form-group-lg">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">#</span>
+                    <input type="number" name="destDisponibles" class="form-control" placeholder="Ingresar Cantidad de Asientos Disponibles" required>
                 </div>
-                <div class="form-group form-group-lg">
-                    <input type="number" name="destDisponibles" class="form-control" placeholder="Disponibles" required>
-                </div>
-                <div class="form-group form-group-lg">
-                    <input type="submit" name="submit" value="Agregar Región" class="btn btn-success">
-                    <a href="adminDestinos.php" class="btn btn-default">Volver al Listado de Destinos</a>
-                </div>
-            </form>
-        </div>
+            </div>
+            <div class="form-group form-group-lg">
+                <input type="submit" name="submit" value="Agregar Destino" class="btn btn-success">
+                <a href="adminDestinos.php" class="btn btn-default">Volver al Listado de Destinos</a>
+            </div>
+        </form>
+    </div>
 
-    </section>
+</section>
 
-    <?php
-    include 'templates/footer.php';
-    ?>
+<?php
+include 'templates/footer.php';
+?>
