@@ -38,11 +38,12 @@ $listadoRegiones = $objRegion->listarRegiones();
                     <option value="<?php  $destino['regID'] ?>"><?php echo $destino['regNombre'] ?></option>
                     <?php
                     foreach($listadoRegiones as $region){
+                      if($region['regID'] != $destino['regID']){
                         ?>
-
+                      
                         <option value="<?php echo $region['regID'] ?>"><?php echo $region['regNombre'] ?></option>
 
-                        <?php } ?>
+                        <?php }} ?>
                     </select>
                 </div>
                 <div class="form-group form-group-lg">
