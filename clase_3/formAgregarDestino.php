@@ -10,12 +10,10 @@ $listadoRegiones = $objRegion->listarRegiones();
 ?>
 
 <section class="container">
-    <?php
+     <?php
     if(isset($_POST['submit'])){
 
-        $objDestino = new Destino();
-        $resultado = $objDestino->agregarDestino();
-        ?>
+       
         <div class="alert alert-<?= ($resultado) ? 'success' : 'danger'?>" role="alert">
           <?= ($resultado) ? 'Agregado con &Eacute;xito' : 'Hubo un Error'?>
       </div>
@@ -25,7 +23,7 @@ $listadoRegiones = $objRegion->listarRegiones();
       <h1>Formulario de alta de una nueva Destino</h1>
 
       <div class="well">
-        <form action="" method="post">
+        <form action="formAgregarDestino.php" method="post">
             <div class="form-group form-group-lg">
                 <input type="text" name="destNombre" class="form-control" placeholder="Nombre del Destino" required>
             </div>

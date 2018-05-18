@@ -3,9 +3,9 @@
     require('clases/Conexion.php');
     require('clases/Region.php');
 
-    $objRegion = new Region();
-   	$chequeo = $objRegion->agregarRegion();
-?>
+	 $objDestino = new Destino();
+     $resultado = $objDestino->agregarDestino();
+ ?>
 
     <section class="container">
         <h1>Nombre de la sección</h1>

@@ -48,23 +48,28 @@ class Destino{
 
     public function agregarDestino(){
 
-        $nombre = $_POST['destNombre'];
-        $region = $_POST['regID'];
-        $precio = $_POST['destPrecio'];
-        $asientos = $_POST['destAsientos'];
-        $disponibles = $_POST['destDisponibles'];
+        $destNombre = $_POST['destNombre'];
+        $regID = $_POST['regID'];
+        $destPrecio = $_POST['destPrecio'];
+        $destAsientos = $_POST['destAsientos'];
+        $destDisponibles = $_POST['destDisponibles'];
         $link = Conexion::conectar();
 
-        $sql = "INSERT INTO destinos (destNombre, regID, destPrecio, destAsientos, destDisponibles) VALUES (:nombre , :region , :precio , :asientos , :disponibles)";
+        $sql = "INSERT INTO destinos (destNombre, regID, destPrecio, destAsientos, destDisponibles) VALUES (:destNombre , :regID , :precio , :destAsientos , :destDisponibles)";
 
         $stmt = $link->prepare($sql);
-        $stmt->bindValue(":nombre", $nombre);
-        $stmt->bindValue(":region", $region);
-        $stmt->bindValue(":precio", $precio);
-        $stmt->bindValue(":asientos", $asientos);
-        $stmt->bindValue(":disponibles", $disponibles);
+        $stmt->bindValue(":destNombre", $destNombre);
+        $stmt->bindValue(":regID", $regID);
+        $stmt->bindValue(":destPrecio", $destPrecio);
+        $stmt->bindValue(":destAsientos", $destAsientos);
+        $stmt->bindValue(":destDisponibles", $destDisponibles);
         
-        return $stmt->execute();
+        if($stmt->execute()){
+            $this->setDestID($link->lastInsertID());
+            $this->setRegID($regID);
+            //etc
+        }
+        return false;
     }
 
     public function modificarDestino($id){
