@@ -1,0 +1,39 @@
+
+
+        public function verDestinoPorID($destID){
+            $link = Conexion::conectar();
+            $sql = "SELECT destID, destNombre, d.regID, r.regNombre, destPrecio, destAsientos, destDisponibles 
+                        FROM destinos d, regiones r
+                        WHERE d.regID = r.regID
+                          AND destID = ". $destID;
+            $stmt = $link->prepare($sql);
+            $stmt->execute();
+            $detalleDestino = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $detalleDestino;
+        }
+
+
+<select name="regID">
+    <option value="<?php echo $detalleDestino['regID']; ?>"><?php echo  $dettalleDerstino['regNombre']; ?></option>
+    
+    ---listado de regiones
+
+</select>        
+
+
+    public function agregarRegion(){
+        $link = Conexion::conectar();
+        $regNombre = $_POST['regNombre'];
+        $sql = "INSERT INTO regiones
+                           ( regNombre )
+                    VALUES ( :regNombre )";    
+
+        $stmt = $link->prepare($sql);
+        $stmt->bindParam(':regNombre', $regNombre, PDO::PARAM_STR);
+        if( $stmt->execute() ){ //alta correcta
+            $this->setRegID($link->lastInsertID());
+            $this->setRegNombre($regNombre);
+            return true;
+        }
+        return false;
+    }

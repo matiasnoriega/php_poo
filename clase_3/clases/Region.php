@@ -10,6 +10,23 @@ class Region{
 	}
 
 
+	public function agregarRegion(){
+        $link = Conexion::conectar();
+        $regNombre = $_POST['regNombre'];
+        $sql = "INSERT INTO regiones
+                           ( regNombre )
+                    VALUES ( :regNombre )";    
+
+        $stmt = $link->prepare($sql);
+        $stmt->bindParam(':regNombre', $regNombre, PDO::PARAM_STR);
+        if( $stmt->execute() ){ //alta correcta
+            $this->setRegID($link->lastInsertID());
+            $this->setRegNombre($regNombre);
+            return true;
+        }
+        return false;
+    }
+    
 	/**
 	*	método para listar regiones.
 	*	@return PDO::FETCH_ASSOC

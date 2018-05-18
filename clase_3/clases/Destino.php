@@ -35,9 +35,10 @@ class Destino{
 	public function verDestinoPorID($id){
 
 		$link = Conexion::conectar();
-		$sql = "SELECT destID, destNombre, regNombre, destPrecio, destAsientos, destDisponibles, destActivo, regiones.regID FROM destinos, regiones WHERE destinos.regID = regiones.regID AND destID = " . $id;
+		$sql = "SELECT destID, destNombre, regNombre, destPrecio, destAsientos, destDisponibles, destActivo, regiones.regID FROM destinos, regiones WHERE destinos.regID = regiones.regID AND destID = :id";
 
 		$stmt = $link->prepare($sql);
+        $stmt->bindValue(":id", $id);
 		$stmt->execute();
 
 		$destino = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -54,23 +55,28 @@ class Destino{
         $disponibles = $_POST['destDisponibles'];
         $link = Conexion::conectar();
 
-        $sql = "INSERT INTO destinos (destNombre, regID, destPrecio, destAsientos, destDisponibles) VALUES ('" . $nombre . "', " . $region . ", " . $precio . ", " . $asientos . ", " . $disponibles .")";
+        $sql = "INSERT INTO destinos (destNombre, regID, destPrecio, destAsientos, destDisponibles) VALUES (:nombre , :region , :precio , :asientos , :disponibles)";
 
         $stmt = $link->prepare($sql);
+        $stmt->bindValue(":nombre", $nombre);
+        $stmt->bindValue(":region", $region);
+        $stmt->bindValue(":precio", $precio);
+        $stmt->bindValue(":asientos", $asientos);
+        $stmt->bindValue(":disponibles", $disponibles);
         
         return $stmt->execute();
     }
 
     public function modificarDestino($id){
 
-        $nombre = $_POST['destNombre'];
-        $region = $_POST['regID'];
-        $precio = $_POST['destPrecio'];
-        $asientos = $_POST['destAsientos'];
-        $disponibles = $_POST['destDisponibles'];
+        $destNombre = $_POST['destNombre'];
+        $regID = $_POST['regID'];
+        $destPrecio = $_POST['destPrecio'];
+        $destAsientos = $_POST['destAsientos'];
+        $destDisponibles = $_POST['destDisponibles'];
 
         $link = Conexion::conectar();
-        $sql = "UPDATE destinos SET destNombre = '" . $nombre . "', regID = " . $region . ", destPrecio = " . $precio . ", destAsientos = ". $asientos . ", destDisponibles = " . $disponibles . " WHERE destID = " . $id;
+        $sql = "UPDATE destinos SET destNombre = :destNombre , regID = :regID , destPrecio = :destPrecio , destAsientos = :destAsientos , destDisponibles = :destDisponibles WHERE destID = :id";
 
         $stmt = $link->prepare($sql);
         
