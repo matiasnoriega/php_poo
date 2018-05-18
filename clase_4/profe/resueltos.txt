@@ -5,8 +5,9 @@
             $sql = "SELECT destID, destNombre, d.regID, r.regNombre, destPrecio, destAsientos, destDisponibles 
                         FROM destinos d, regiones r
                         WHERE d.regID = r.regID
-                          AND destID = ". $destID;
+                          AND destID = :detID";
             $stmt = $link->prepare($sql);
+            $stmt->bindParam(':detID', $destID, PDO::PARAM_INT);
             $stmt->execute();
             $detalleDestino = $stmt->fetch(PDO::FETCH_ASSOC);
             return $detalleDestino;
